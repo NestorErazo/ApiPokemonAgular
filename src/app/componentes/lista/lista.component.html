@@ -1,3 +1,5 @@
+<p>lista works!</p>
+
 @for(item of pokemonesCompleto; track item.id){
     <mat-card class="example-card">
     <mat-card-header>
@@ -10,8 +12,7 @@
     <mat-card-content>
     <p>
     Otras propiedades
-     
-    
+    {{item.generation}}
     </p>
     </mat-card-content>
     <mat-card-actions>
