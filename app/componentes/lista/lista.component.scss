@@ -1,8 +1,61 @@
 .example-card {
     max-width: 400px;
-    }
-    
-    .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-    }
+    margin: 20px auto; /* Centramos la tarjeta y le damos espacio alrededor */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.2s ease-in-out;
+    background-color: #e7c70d; /* Fondo de la tarjeta (color claro) */
+  }
+  
+  .example-card:hover {
+    transform: scale(1.05); /* Efecto de agrandar ligeramente al pasar el mouse */
+  }
+  
+  mat-card-header {
+    background-color: #0d0f0f; /* Fondo del header (color más oscuro) */
+    padding: 16px;
+    border-bottom: 1px solid #ddd; /* Línea que separa el header */
+  }
+  
+  mat-card-avatar img {
+    border-radius: 50%; /* Imagen del avatar redonda */
+    width: 50px;
+    height: 50px;
+  }
+  
+  mat-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff; /* Color del título (blanco sobre fondo oscuro) */
+  }
+  
+  mat-card-subtitle {
+    font-size: 0.9rem;
+    color: #fff; /* Color del subtítulo (blanco sobre fondo oscuro) */
+  }
+  
+  mat-card-content {
+    padding: 16px;
+    background-color: #4a11e7; /* Fondo del contenido de la tarjeta */
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end; /* Alinea el botón a la derecha */
+    padding: 16px;
+  }
+  
+  button[mat-button] {
+    background-color: #060c2c; /* Color del botón */
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+  
+  button[mat-button]:hover {
+    background-color: #439f30; /* Color del botón cuando se pasa el mouse */
+  }
+  

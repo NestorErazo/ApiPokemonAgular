@@ -6,17 +6,17 @@ import { Injectable } from '@angular/core';
 })
 export class PokeapiService {
   urlApi='https://pokeapi.co/api/v2/pokemon/'
-  
- constructor(private http: HttpClient) { }
 
- obtenerListadoPokemones(url: any){
+  constructor(private http: HttpClient) { }
+
+
+  obtenerListadoPokemones() {
+    return this.http.get(this.urlApi); 
+  }
   
-  return this.http.get(this.urlApi);
-  
+  obtenerUnPokemon(url: string) {
+    return this.http.get(url);
   }
 
-  // Método para obtener detalles de un Pokémon específico usando la URL
-obtenerDetallePokemon(url: string) {
-  return this.http.get(url);
-}
+
 }
