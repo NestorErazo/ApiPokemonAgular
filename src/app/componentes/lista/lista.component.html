@@ -1,24 +1,35 @@
 <p>lista works!</p>
 
-@for(item of pokemonesCompleto; track item.id){
-    <mat-card class="example-card">
-    <mat-card-header>
-    <div mat-card-avatar><img [src]="item.sprites.front_default"></div>
-    <mat-card-title>{{item.name}}</mat-card-title>
-    <mat-card-subtitle></mat-card-subtitle>
-    </mat-card-header>
-     
-    
-    <mat-card-content>
-    <p>
-    Otras propiedades
-    {{item.generation}}
-    </p>
-    </mat-card-content>
-    <mat-card-actions>
-    <button mat-button (click)="playSound(item.cries.latest)">Sonido</button>
-    </mat-card-actions>
-    </mat-card>
-     
-    
+<div class="card-container">
+    @for(item of pokemonesCompleto; track item.id){
+      <mat-card class="example-card" (click)="onCardClick($event)">
+        <mat-card-header>
+          <div mat-card-avatar><img [src]="item.sprites.front_default"></div>
+          <mat-card-title>{{item.name}}</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+  
+        <mat-card-content>
+          <p>
+            Otras propiedades 
+            <br>
+            experiencia : <br>
+            {{ item.base_experience }}<br>
+            numero Pokemon : <br>
+            {{ item.id }}<br>
+            habilidades : <br>
+            @for(habilidad of item.abilities; track habilidad.id){
+              {{ habilidad.ability.name }}<br>
+            } <br>
+            <!--movimientos : <br>
+            @for(move of item.moves; track move.move.name){
+              {{ move.move.name }}<br>
+            }-->
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="playSound(item.cries.latest)">Sonido</button>
+        </mat-card-actions>
+      </mat-card>
     }
+</div>
